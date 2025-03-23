@@ -7,12 +7,14 @@ import NewsletterBox from '../components/NewsletterBox'
 import ScrollingMarquee from '../components/ScrollingMarquee'
 import HeroSection from '../useful_components/HeroSection'
 import Navbar from '../components/Navbar'
+import BackgroundCarousel from '../useful_components/BackgroundCarousel'
 
 const Home = () => {
   return (
     <div>
       <Navbar />
-      <Hero />
+      {/* <Hero /> */}
+      <BackgroundCarousel/>
       {/* <HeroSection /> */}
       {/* <ScrollingMarquee /> */}
       <LatestCollection/>

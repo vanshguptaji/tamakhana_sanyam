@@ -388,8 +388,8 @@ const HeroSection = () => {
                   opacity: index === currentImageIndex ? 1 : 0,
                 }}
               >
-                {/* Optional overlay to ensure content visibility */}
-                <div className="absolute inset-0 bg-[#5546ff] bg-opacity-65"></div>
+                {/* Optional overlay to ensure content visibility   #5546ff */}
+                <div className="absolute inset-0 bg-[#000] bg-opacity-65"></div>
               </div>
             ))}
           </div>
@@ -437,7 +437,7 @@ const HeroSection = () => {
         </nav>
 
         <div className="header absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-10">
-          <h1 className="uppercase font-['Lobster',cursive] tracking-wide text-[15vw] text-tamakhana-lime leading-10">TAMAKHANA</h1>
+          <h1 className="uppercase font-sans tracking-wide text-[15vw] text-white leading-10">TAMAKHANA</h1>
         </div>
         
         <div ref={wrapperRef} className="tracker absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 py-8 z-10">
