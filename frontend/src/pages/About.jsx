@@ -3,7 +3,7 @@ import Title from "../components/Title";
 import { assets } from "../assets/assets";
 import NewsletterBox from "../components/NewsletterBox";
 import Navbar from "../components/Navbar";
-import makhane from '../useful_components/makhane_cor6.jpg'
+import makhane from '../assets/makhane_cor6.jpg'
 
 const About = () => {
   return (

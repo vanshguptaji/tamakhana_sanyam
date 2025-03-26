@@ -109,7 +109,7 @@
 
 
 import React, { useEffect, useRef } from 'react';
-import snowflakeImage from './Untitled-1.png'; // Replace with your image path
+import snowflakeImage from '../assets/Untitled-1.png'; // Replace with your image path
 
 const CanvasLogin_snow = () => {
     const canvasRef = useRef(null);

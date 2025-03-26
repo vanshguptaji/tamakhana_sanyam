@@ -13,6 +13,9 @@ a.active hr{
 *{
     font-family: Outfit;
 }
+html {
+  background-color: #bfdbfe;
+}
 
 .prata-regular {
     font-family: "Prata", serif;

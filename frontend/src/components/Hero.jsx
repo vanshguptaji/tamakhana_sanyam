@@ -1,6 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets'
-import makhana from '../useful_components/makhane_cor2.jpeg'
+import makhana from '../assets/makhane_cor2.jpeg'
 
 const Hero = () => {
   return (

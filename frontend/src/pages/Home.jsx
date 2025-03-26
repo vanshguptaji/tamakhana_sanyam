@@ -16,7 +16,7 @@ const Home = () => {
       {/* <Hero /> */}
       <BackgroundCarousel/>
       {/* <HeroSection /> */}
-      {/* <ScrollingMarquee /> */}
+      <ScrollingMarquee />
       <LatestCollection/>
       <BestSeller/>
       <OurPolicy/>

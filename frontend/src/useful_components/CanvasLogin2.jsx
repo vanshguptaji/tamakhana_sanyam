@@ -132,7 +132,7 @@
 
 
 import { useEffect, useRef } from "react";
-import makhanes from './Untitled-1.png'
+import makhanes from '../assets/Untitled-1.png'
 
 const CanvasLogin2 = () => {
   const canvasRef = useRef(null);

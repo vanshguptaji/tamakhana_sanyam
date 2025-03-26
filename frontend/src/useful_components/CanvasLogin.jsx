@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import logindesign from "./logindesign.jpg";
+import logindesign from "../assets/logindesign.jpg";
 
 function CanvasLogin() {
   const canvasRef = useRef(null);
