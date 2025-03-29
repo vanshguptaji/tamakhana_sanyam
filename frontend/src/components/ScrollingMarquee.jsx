@@ -93,8 +93,7 @@ const ScrollingMarquee = ({
   };
 
   return (
-    <>
-      <div className="relative bg-[#0f0f0f] py-8 overflow-hidden w-full">
+      <div className="relative bg-[#0f0f0f] py-8 overflow-hidden w-full rounded-3xl">
         <div 
           ref={containerRef}
           className="marquee-container flex w-full whitespace-nowrap"
@@ -112,7 +111,6 @@ const ScrollingMarquee = ({
           ))}
         </div>
       </div>
-    </>
   );
 };
 

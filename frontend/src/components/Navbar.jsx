@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex items-center justify-between py-5 font-medium bg-white px-8">
+    <div className="flex items-center justify-between py-5 font-medium bg-white px-8 rounded-2xl">
       <Link to="/">
         <div className="font-bold text-2xl">TAMAKHANA</div>
       </Link>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import makhana from "../assets/makhane_cor6.jpg";
+import makhana from "../assets/makhane_cor2.jpeg";
+import makhana_pos1 from "../assets/makhana_pos1.jpg";
 import HeroSection from "./HeroSection";
 import { motion } from "framer-motion";
 
@@ -8,8 +9,7 @@ function BackgroundCarousel() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-blue-200 p-4 md:p-8 font-sans ">
-      <div className="max-w-6xl mx-auto bg-white/80 rounded-3xl overflow-hidden shadow-lg p-6 relative drop-shadow-[8px_8px_0px_#000]">
+      <div className="max-w-6xl mx-auto font-sans my-8 bg-white rounded-3xl overflow-hidden shadow-lg p-6 relative drop-shadow-[8px_8px_0px_#000]">
         {/* Main Content */}
         <div className="flex flex-col md:flex-row gap-6">
           {/* Sidebar */}
@@ -36,13 +36,13 @@ function BackgroundCarousel() {
                   className="space-y-4 text-center bg-gray-100 rounded-md p-3 shadow-lg"
                 >
                   <div className="py-1 cursor-pointer hover:bg-gray-200 rounded">
-                    Men
+                    Dry Fruits
                   </div>
                   <div className="py-1 cursor-pointer hover:bg-gray-200 rounded">
-                    Women
+                    Light Weighted
                   </div>
                   <div className="py-1 cursor-pointer hover:bg-gray-200 rounded">
-                    Kids
+                    Healthy Makhanas
                   </div>
                 </motion.div>
               )}
@@ -54,6 +54,7 @@ function BackgroundCarousel() {
                 2
               </div>
             </div>
+            <img src={makhana_pos1} alt="" className="rounded-2xl mt-2 h-[300px]"/>
           </div>
 
           {/* Main Content */}
@@ -71,8 +72,8 @@ function BackgroundCarousel() {
                   <h2 className="text-5xl font-bold mb-4 text-blue-800 drop-shadow-[4px_4px_0px_#000]">
                     All-In-One
                   </h2>
-                  <p className="text-xl text-blue-800 ">
-                    Visit Collectibles And Follow Your Passion.
+                  <p className="text-xl text-white ">
+                    Visit Us and Get Amazing Deals With limited Budget.
                   </p>
                 </div>
                 {/* Search Box */}
@@ -233,7 +234,7 @@ function BackgroundCarousel() {
           </div>
         </div>
       </div>
-    </div>
+    // </div>
   );
 }
 

@@ -8,19 +8,34 @@ import ScrollingMarquee from '../components/ScrollingMarquee'
 import HeroSection from '../useful_components/HeroSection'
 import Navbar from '../components/Navbar'
 import BackgroundCarousel from '../useful_components/BackgroundCarousel'
+import "./Home.css";
 
 const Home = () => {
   return (
     <div>
       <Navbar />
       {/* <Hero /> */}
-      <BackgroundCarousel/>
-      {/* <HeroSection /> */}
+      <div className='container'>
+      <BackgroundCarousel />
+      </div>
+      <div className='container'>
+      <LatestCollection />
+      </div>
+      <div className='container'>
+      <BestSeller />
+      </div>
+      <div className='container'>
+      <OurPolicy />
+      </div>
+      <div className='container'>
+      <NewsletterBox />
+      </div>
+      {/* <HeroSection />
       <ScrollingMarquee />
-      <LatestCollection/>
-      <BestSeller/>
-      <OurPolicy/>
-      <NewsletterBox/>
+      <LatestCollection />
+      <BestSeller />
+      <OurPolicy />
+      <NewsletterBox /> */}
     </div>
   )
 }

@@ -137,11 +137,11 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      <div className="flex items-center justify-center min-h-screen bg-gray-900">
-        <CanvasLogin2 className="absolute inset-0 w-full h-full z-0" />
-        <div className="flex bg-gray-100 rounded-lg overflow-hidden max-w-4xl shadow-lg w-full m-4 z-50">
+      <div className="flex items-center justify-center min-h-screen bg-blue-200">
+        <CanvasLogin2 className="absolute inset-0 w-screen h-screen z-0" />
+        <div className="flex bg-gray-100 rounded-3xl drop-shadow-[8px_8px_0px_#000] overflow-hidden max-w-4xl w-full m-4 z-50">
           {/* Left side with canvas */}
-          <div className="hidden md:block md:w-1/2 bg-gray-200 flex items-center justify-center canvas-container">
+          <div className=" md:block md:w-1/2 bg-gray-200 flex items-center justify-center canvas-container">
             <CanvasLogin />
           </div>
           

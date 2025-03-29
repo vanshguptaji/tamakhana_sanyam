@@ -83,8 +83,8 @@ const Collection = () => {
     <>
       <Navbar />
       <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
-        {/* Filter Options */}
-        <div className="min-w-60">
+        
+        {/* <div className="min-w-60">
           <p
             onClick={() => setShowFilter(!showFilter)}
             className="my-2 text-xl flex items-center cursor-pointer gap-2"
@@ -96,7 +96,7 @@ const Collection = () => {
               alt=""
             />
           </p>
-          {/* Category Filter */}
+
           <div
             className={`border border-gray-300 pl-5 py-3 mt-6 ${
               showFilter ? "" : "hidden"
@@ -133,7 +133,7 @@ const Collection = () => {
               </p>
             </div>
           </div>
-          {/* SubCategory Filter */}
+
           <div
             className={`border border-gray-300 pl-5 py-3 my-5 ${
               showFilter ? "" : "hidden"
@@ -170,7 +170,7 @@ const Collection = () => {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Right Side */}
         <div className="flex-1">
@@ -188,7 +188,7 @@ const Collection = () => {
           </div>
 
           {/* Map Products */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-48 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-28 gap-y-8">
             {filterProducts.map((item, index) => (
               <ProductItem
                 key={index}

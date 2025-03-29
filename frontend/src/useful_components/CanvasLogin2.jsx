@@ -243,8 +243,8 @@ const CanvasLogin2 = () => {
     // Initialization
     const init = () => {
       nutArray = [];
-      for (let i = 0; i < 200; i++) {
-        const size = Math.random() * 150 + 50;
+      for (let i = 0; i < 100; i++) {
+        const size = Math.random() * 100 + 50;
         const x = Math.random() * (canvas.width - size);
         const y = Math.random() * (canvas.height - size) + 20;
         const dx = Math.random() * 4 - 2;
@@ -283,7 +283,7 @@ const CanvasLogin2 = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full" />;
+  return <canvas ref={canvasRef} className="absolute top-20 left-20 w-full h-full" />;
 };
 
 export default CanvasLogin2;
