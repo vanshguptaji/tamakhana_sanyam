@@ -194,16 +194,16 @@ const AboutUs = () => {
           {/* Content */}
 
           <h2 className="text-[#200066] text-2xl font-bold">
-            Hi, we’re Greg and Gabi, co-founders of Magic Spoon.
+            Hi I am Sanyam Founder of TAMAKHANA.
           </h2>
-          <p className="text-[#200066] mt-4 text-base">
+          {/* <p className="text-[#200066] mt-4 text-base">
             We’ve been friends for ten years: met at college, lived together,
             even started a previous business together (you could call us
             “cereal” entrepreneurs…). We both grew up eating cereal every
             morning for breakfast, binging on the sugary crunch of the classic
             brands and then crashing in the afternoon when we were supposed to
             be at our most productive.
-          </p>
+          </p> */}
           <p className="text-[#200066] mt-4 text-base">
             **Hi, we’re the founders of Tamakhana.** At Tamakhana, our journey
             started with a simple yet powerful idea—to redefine snacking by
