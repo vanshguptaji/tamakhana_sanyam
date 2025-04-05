@@ -11,7 +11,7 @@ const OurPolicy = () => {
     <>
     <div className='bg-white rounded-3xl drop-shadow-[8px_8px_0px_#000] mb-20 p-20'>
     <h1 className='text-3xl font-extrabold text-center text-rose-600'>GUILT FREE SUPERSNACKS</h1>
-    <div className='flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 text-center py-20 text-xs sm:text-sm md:text-base text-gray-700'>
+    <div className='flex flex-col sm:flex-row justify-around gap-20 sm:gap-2 text-center py-20 text-xs sm:text-sm md:text-base text-gray-700'>
       
       <div>
         <img src={cholestrolFree} className='w-24 m-auto mb-5' alt="" />
