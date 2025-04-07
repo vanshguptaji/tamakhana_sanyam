@@ -13,7 +13,7 @@ const addProduct = async (req, res) => {
         const image4 = req.files.image4 && req.files.image4[0]
         // const image5 = req.files.image4 && req.files.image5[0]
 
-        const images = [image1, image2, image3, image4, image5].filter((item) => item !== undefined)
+        const images = [image1, image2, image3, image4].filter((item) => item !== undefined)
 
         let imagesUrl = await Promise.all(
             images.map(async (item) => {
