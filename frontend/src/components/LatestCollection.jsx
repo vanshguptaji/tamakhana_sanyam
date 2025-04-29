@@ -174,7 +174,7 @@ const LatestCollection = () => {
     const itemsToShow = 3; 
 
     return (
-        <div className='mb-10 bg-orange-300 p-8 rounded-3xl drop-shadow-[8px_8px_0px_#000] w-full'>
+        <div className='mb-10 mt-12 bg-orange-300 p-8 rounded-3xl drop-shadow-[8px_8px_0px_#000] w-full'>
             <div className='text-center py-8 text-3xl'>
                 <Title text1={'LATEST'} text2={'COLLECTIONS'} />
                 <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-200'>
