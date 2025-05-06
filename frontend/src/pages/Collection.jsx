@@ -82,18 +82,20 @@ const Collection = () => {
   return (
     <>
       <Navbar />
-      <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
-        
-        {/* <div className="min-w-60">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 pt-10 border-t px-4 sm:px-10">
+        {/* Filter Section */}
+        <div className="sm:w-1/4">
           <p
             onClick={() => setShowFilter(!showFilter)}
-            className="my-2 text-xl flex items-center cursor-pointer gap-2"
+            className="my-2 text-xl flex items-center cursor-pointer gap-2 sm:hidden"
           >
             FILTERS
             <img
-              className={`h-3 sm:hidden ${showFilter ? "rotate-90" : ""}`}
+              className={`h-3 transition-transform ${
+                showFilter ? "rotate-90" : ""
+              }`}
               src={assets.dropdown_icon}
-              alt=""
+              alt="Toggle Filters"
             />
           </p>
 
@@ -129,7 +131,7 @@ const Collection = () => {
                   value={"Kids"}
                   onChange={toggleCategory}
                 />{" "}
-                kids
+                Kids
               </p>
             </div>
           </div>
@@ -170,25 +172,25 @@ const Collection = () => {
               </p>
             </div>
           </div>
-        </div> */}
+        </div>
 
-        {/* Right Side */}
+        {/* Product Section */}
         <div className="flex-1">
-          <div className="flex justify-between text-base sm:text-2xl mb-4">
+          <div className="flex justify-between items-center text-base sm:text-2xl mb-4">
             <Title text1={"ALL"} text2={"COLLECTIONS"} />
-            {/* Porduct Sort */}
+            {/* Product Sort */}
             <select
               onChange={(e) => setSortType(e.target.value)}
-              className="border-2 border-gray-300 text-sm px-2"
+              className="border-2 border-gray-300 text-sm px-2 py-1 sm:py-2"
             >
-              <option value="relavent">Sort by: Relavent</option>
+              <option value="relavent">Sort by: Relevant</option>
               <option value="low-high">Sort by: Low to High</option>
               <option value="high-low">Sort by: High to Low</option>
             </select>
           </div>
 
-          {/* Map Products */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-28 gap-y-8">
+          {/* Product Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {filterProducts.map((item, index) => (
               <ProductItem
                 key={index}
