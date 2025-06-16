@@ -2,10 +2,12 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { backendUrl, currency } from '../App'
 import { toast } from 'react-toastify'
+import Add from './Add'
 
 const List = ({ token }) => {
 
   const [list, setList] = useState([])
+  const [editProduct, setEditProduct] = useState(null);
 
   const fetchList = async () => {
     try {
@@ -42,6 +44,10 @@ const List = ({ token }) => {
     }
   }
 
+  const onEditProduct = (product) => {
+    setEditProduct(product);
+  };
+
   useEffect(() => {
     fetchList()
   }, [])
@@ -65,17 +71,37 @@ const List = ({ token }) => {
 
         {
           list.map((item, index) => (
-            <div className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border text-sm' key={index}>
+            <div
+              className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border text-sm'
+              key={index}
+            >
               <img className='w-12' src={item.image[0]} alt="" />
               <p>{item.name}</p>
               <p>{item.category}</p>
               <p>{currency}{item.price}</p>
-              <p onClick={()=>removeProduct(item._id)} className='text-right md:text-center cursor-pointer text-lg'>X</p>
+              <div className='flex justify-end md:justify-center gap-2'>
+                <button
+                  onClick={() => onEditProduct(item)}
+                  className='bg-blue-500 text-white px-2 py-1 rounded text-xs hover:bg-blue-600 transition'
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => removeProduct(item._id)}
+                  className='text-red-600 text-lg px-2 hover:text-red-800 transition'
+                  title="Remove"
+                >
+                  X
+                </button>
+              </div>
             </div>
           ))
         }
 
       </div>
+
+      {/* Add component for adding/editing products */}
+      <Add token={token} editProduct={editProduct} setEditProduct={setEditProduct} />
     </>
   )
 }
