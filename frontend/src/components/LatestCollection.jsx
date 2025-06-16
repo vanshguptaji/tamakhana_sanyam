@@ -60,7 +60,7 @@ const LatestCollection = () => {
         {/* Products Slider */}
         <div className="overflow-hidden">
           <div
-            className="flex transition-all duration-500 ease-in-out"
+            className="flex transition-all duration-500 ease-in-out gap-24"
             style={{
               transform: `translateX(-${
                 currentIndex * (100 / latestProducts.length)

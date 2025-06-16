@@ -9,7 +9,7 @@ const Footer = () => {
         <div>
             <div className='font-sans text-4xl font-bold'>TAMAKHANA</div>
             <p className='w-full md:w-2/3 text-gray-600'>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+              Tamakhana is a website founded by Sanyam, dedicated to selling premium quality makhana (fox nuts). We are passionate about delivering healthy and delicious snacks to your doorstep.
             </p>
         </div>
 
@@ -35,7 +35,7 @@ const Footer = () => {
 
         <div>
             <hr />
-            <p className='py-5 text-sm text-center'>Copyright 2025@ tamakhana.com - All Right Reserved.</p>
+            <p className='py-5 text-sm text-center'>Copyright 2025@ tamakhana.com - All Rights Reserved.</p>
         </div>
 
     </div>

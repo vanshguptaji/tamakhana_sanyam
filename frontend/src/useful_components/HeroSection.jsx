@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import eyes from "../assets/eyes4.png";
 import makhana from '../assets/Untitled-1.png'
 
 gsap.registerPlugin(ScrollTrigger);
@@ -80,16 +79,11 @@ const HeroSection = () => {
   return (
     <div className="w-full h-60 overflow-hidden">       
       <div ref={wrapperRef} className="relative top-20 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 ">
-        <div ref={emojiRef} className="emoji absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-no-repeat bg-center bg-cover rounded-full" style={{ backgroundImage: `url(${makhana})` }}>
-          <div ref={emojiFaceRef} className="emoji-face absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[225px] h-[200px] flex flex-col">
-            <div className="eyes flex justify-between flex-1">
-              <img src={eyes} alt="" className="w-[100px] h-[100px] animate-rotate-eyes" />
-              <img src={eyes} alt="" className="w-[100px] h-[100px] animate-rotate-eyes" />
-            </div>
-          </div>
-          <div className="mouth-wrapper absolute bottom-[40%] left-1/2 transform -translate-x-1/2 flex justify-center items-center w-[80px] h-[50px]">
-            <div className="mouth w-[40px] h-[40px] rounded-full bg-black animate-wonder-face"></div>
-          </div>
+        <div
+          ref={emojiRef}
+          className="emoji absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[750px] h-[750px] bg-no-repeat bg-center bg-cover rounded-full"
+          style={{ backgroundImage: `url(${makhana})` }}
+        >
         </div>
       </div>
     </div>
