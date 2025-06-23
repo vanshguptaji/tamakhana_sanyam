@@ -32,7 +32,7 @@ const BestSeller = () => {
 
   return (
     <div className="mb-10 bg-red-300 rounded-3xl drop-shadow-[8px_8px_0px_#000] w-full">
-      <ScrollingMarquee />
+      {/* <ScrollingMarquee /> */}
       <div className="p-8">
         <div className="text-center text-3xl py-8">
           <Title text1={"BEST"} text2={"SELLERS"} />
@@ -105,7 +105,7 @@ const BestSeller = () => {
           </div>
         </div>
       </div>
-      <ScrollingMarquee />
+      {/* <ScrollingMarquee /> */}
     </div>
   );
 };

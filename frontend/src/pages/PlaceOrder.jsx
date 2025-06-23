@@ -29,32 +29,54 @@ const PlaceOrder = () => {
         setFormData(data => ({ ...data, [name]: value }))
     }
 
-    const initPay = (order) => {
+    // Dynamically load Razorpay script
+    const loadRazorpayScript = () => {
+        return new Promise((resolve) => {
+            if (window.Razorpay) {
+                resolve(true);
+                return;
+            }
+            const script = document.createElement('script');
+            script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+            script.onload = () => resolve(true);
+            script.onerror = () => resolve(false);
+            document.body.appendChild(script);
+        });
+    };
+
+    // Update initPay to async and load script before opening Razorpay
+    const initPay = async (order) => {
+        const loaded = await loadRazorpayScript();
+        if (!loaded) {
+            toast.error("Razorpay SDK failed to load. Are you online?");
+            return;
+        }
         const options = {
             key: import.meta.env.VITE_RAZORPAY_KEY_ID,
             amount: order.amount,
             currency: order.currency,
-            name:'Order Payment',
-            description:'Order Payment',
+            name: 'Order Payment',
+            description: 'Order Payment',
             order_id: order.id,
             receipt: order.receipt,
             handler: async (response) => {
-                console.log(response)
                 try {
-                    
-                    const { data } = await axios.post(backendUrl + '/api/order/verifyRazorpay',response,{headers:{token}})
+                    const { data } = await axios.post(
+                        backendUrl + '/api/order/verifyRazorpay',
+                        response,
+                        { headers: { token } }
+                    );
                     if (data.success) {
-                        navigate('/orders')
-                        setCartItems({})
+                        navigate('/orders');
+                        setCartItems({});
                     }
                 } catch (error) {
-                    console.log(error)
-                    toast.error(error)
+                    toast.error(error.message || "Payment verification failed");
                 }
             }
-        }
-        const rzp = new window.Razorpay(options)
-        rzp.open()
+        };
+        const rzp = new window.Razorpay(options);
+        rzp.open();
     }
 
     const onSubmitHandler = async (event) => {
@@ -110,9 +132,10 @@ const PlaceOrder = () => {
 
                     const responseRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData, {headers:{token}})
                     if (responseRazorpay.data.success) {
-                        initPay(responseRazorpay.data.order)
+                        await initPay(responseRazorpay.data.order);
+                    } else {
+                        toast.error(responseRazorpay.data.message);
                     }
-
                     break;
 
                 default:
