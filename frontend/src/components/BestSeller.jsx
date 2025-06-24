@@ -30,6 +30,16 @@ const BestSeller = () => {
   // Number of items to show per view based on screen size
   const itemsToShow = 3;
 
+  // Calculate visible items
+  const getVisibleItems = () => {
+    if (bestSeller.length <= itemsToShow) return bestSeller;
+    let visible = [];
+    for (let i = 0; i < itemsToShow; i++) {
+      visible.push(bestSeller[(currentIndex + i) % bestSeller.length]);
+    }
+    return visible;
+  };
+
   return (
     <div className="mb-10 bg-purple-200 rounded-3xl drop-shadow-[8px_8px_0px_#000] w-full">
       {/* <ScrollingMarquee /> */}
@@ -66,17 +76,10 @@ const BestSeller = () => {
 
           {/* Products Slider */}
           <div className="overflow-hidden">
-            <div
-              className="flex transition-all duration-500 ease-in-out gap-24"
-              style={{
-                transform: `translateX(-${
-                  currentIndex * (100 / bestSeller.length)
-                }%)`,
-              }}
-            >
-              {bestSeller.map((item, index) => (
+            <div className="flex flex-wrap gap-24 justify-center">
+              {getVisibleItems().map((item, idx) => (
                 <div
-                  key={index}
+                  key={item._id || idx}
                   className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex-shrink-0 p-2"
                 >
                   <ProductItem
@@ -92,16 +95,22 @@ const BestSeller = () => {
 
           {/* Dots Indicator */}
           <div className="flex justify-center mt-6 gap-2">
-            {Array.from({ length: bestSeller.length }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "bg-black" : "bg-gray-400"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
+            {Array.from({ length: bestSeller.length }).map((_, index) => {
+              const isActive =
+                (index >= currentIndex && index < currentIndex + itemsToShow) ||
+                (currentIndex + itemsToShow > bestSeller.length &&
+                  index < (currentIndex + itemsToShow) % bestSeller.length);
+              return (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    isActive ? "bg-black" : "bg-gray-400"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

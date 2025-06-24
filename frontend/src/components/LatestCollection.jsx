@@ -28,6 +28,16 @@ const LatestCollection = () => {
   // Number of items to show per view based on screen size
   const itemsToShow = 3; // Default for larger screens
 
+  // Calculate visible items
+  const getVisibleItems = () => {
+    if (latestProducts.length <= itemsToShow) return latestProducts;
+    let visible = [];
+    for (let i = 0; i < itemsToShow; i++) {
+      visible.push(latestProducts[(currentIndex + i) % latestProducts.length]);
+    }
+    return visible;
+  };
+
   return (
     <div className="mb-10 mt-36 bg-blue-300 p-8 rounded-3xl drop-shadow-[8px_8px_0px_#000] w-full">
       <div className="text-center py-8 text-3xl">
@@ -59,17 +69,10 @@ const LatestCollection = () => {
 
         {/* Products Slider */}
         <div className="overflow-hidden">
-          <div
-            className="flex transition-all duration-500 ease-in-out gap-24"
-            style={{
-              transform: `translateX(-${
-                currentIndex * (100 / latestProducts.length)
-              }%)`,
-            }}
-          >
-            {latestProducts.map((item, index) => (
+          <div className="flex flex-wrap gap-24 justify-center">
+            {getVisibleItems().map((item, idx) => (
               <div
-                key={index}
+                key={item._id || idx}
                 className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex-shrink-0 p-2"
               >
                 <ProductItem
@@ -85,16 +88,22 @@ const LatestCollection = () => {
 
         {/* Dots Indicator */}
         <div className="flex justify-center mt-6 gap-2">
-          {Array.from({ length: latestProducts.length }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentIndex ? "bg-black" : "bg-gray-400"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
+          {Array.from({ length: latestProducts.length }).map((_, index) => {
+            const isActive =
+              (index >= currentIndex && index < currentIndex + itemsToShow) ||
+              (currentIndex + itemsToShow > latestProducts.length &&
+                index < (currentIndex + itemsToShow) % latestProducts.length);
+            return (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  isActive ? "bg-black" : "bg-gray-400"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
