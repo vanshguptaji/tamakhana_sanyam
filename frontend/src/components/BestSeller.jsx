@@ -31,7 +31,7 @@ const BestSeller = () => {
   const itemsToShow = 3;
 
   return (
-    <div className="mb-10 bg-red-300 rounded-3xl drop-shadow-[8px_8px_0px_#000] w-full">
+    <div className="mb-10 bg-purple-200 rounded-3xl drop-shadow-[8px_8px_0px_#000] w-full">
       {/* <ScrollingMarquee /> */}
       <div className="p-8">
         <div className="text-center text-3xl py-8">

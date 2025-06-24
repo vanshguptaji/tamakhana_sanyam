@@ -5,9 +5,9 @@ import makhana from "../assets/Untitled-1.png";
 
 const AboutUs = () => {
   return (
-    <div className="relative bg-blue-200 min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden">
       {/* Floating Images Across Entire Page */}
-      <RotatingImages numImages={8} imageUrl={makhana} />
+      {/* <RotatingImages numImages={8} imageUrl={makhana} /> */}
 
       {/* Header */}
       <Navbar />

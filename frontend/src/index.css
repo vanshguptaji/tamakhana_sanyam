@@ -17,6 +17,23 @@ html {
   background-color: #bfdbfe;
 }
 
+html, body {
+  background: url('./assets/makhanaBg2.png') no-repeat center center fixed;
+  background-size: cover;
+  /* Optional: add a slight overlay for readability */
+  /* position: relative; */
+}
+
+body::before {
+  /* Optional: dark overlay for better contrast */
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.2); /* adjust for effect */
+  pointer-events: none;
+  z-index: 0;
+}
+
 .prata-regular {
     font-family: "Prata", serif;
     font-weight: 400;
